@@ -181,6 +181,13 @@
   color: #fff !important;
 }
 
+p.feedback {
+  font-family: Gotham;
+}
+p.introduce {
+  font-family: Poppins;
+}
+
 .navbar-mobile {
   display: none;
 }

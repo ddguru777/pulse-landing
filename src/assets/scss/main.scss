@@ -212,6 +212,15 @@
   }
 }
 
+p {
+  &.feedback {
+    font-family: Gotham;
+  }
+  &.introduce {
+    font-family: Poppins;
+  }
+}
+
 .navbar-mobile {
   display: none;
 }
