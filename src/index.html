@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pulse</title>
   <link href="assets/font-awesome/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <link rel="stylesheet" href="assets/styles/common.css" />
   <link rel="stylesheet" href="assets/styles/main.css" />
 </head>
@@ -29,23 +30,20 @@
       </div>
     </div>
     <div class="header__slider swiper-container" id="slider">
-      <div class="header__slider__wrapper swiper-wrapper">
-        <div class="header__slider__wrapper--section swiper-slide slider-1">
-          <div class="header__slider__wrapper--section__content">
-            <p>
-              Pulse by ProjectAI helps project manager make sense of people's collective insights for <strong>better project
-                outcomes</strong>.
-            </p>
-            <a href="#" class="btn green lg mt-20">Try it Out</a>
+      <div class="header__slider__wrapper">
+        <div class="header__slider__wrapper__section">
+          <div class="header__slider__wrapper__section__main slide slider-1 hide">
+            <h1 class="hide">Collective Insight</h1>
           </div>
-        </div>
-        <div class="header__slider__wrapper--section swiper-slide slider-2 hide">
-          <div class="header__slider__wrapper--section__content">
-            <p>
+          <div class="header__slider__wrapper__section__main slide slider-2 hide">
+            <h1 class="hide">Project Foresight</h1>
+          </div>
+          <div class="header__slider__wrapper__section__description">
+            <p class="header-introduction hide">
               Pulse by ProjectAI helps project manager make sense of people's collective insights for <strong>better project
                 outcomes</strong>.
             </p>
-            <a href="#" class="btn green lg mt-20">Try it Out</a>
+            <a href="#" class="btn green lg mt-20 hide header-point">Try it Out</a>
           </div>
         </div>
       </div>
@@ -67,28 +65,28 @@
         <div class="content-row">
           <div class="content_row__column ml-20">
             <img src="./assets/images/who-they-are.png" />
-            <h2>Who they are</h2>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+            <h2 class="introduce">Who they are</h2>
+            <p class="introduce">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
               magna aliquam erat volutpat.</p>
           </div>
           <div class="content_row__column ml-20">
             <img src="./assets/images/how-they-feel.png" />
-            <h2>How they are</h2>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+            <h2 class="introduce">How they are</h2>
+            <p class="introduce">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
               magna aliquam erat volutpat.</p>
           </div>
         </div>
         <div class="content-row mt-20">
           <div class="content_row__column ml-20">
             <img src="./assets/images/what-they-say.png" />
-            <h2>What they say</h2>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+            <h2 class="introduce">What they say</h2>
+            <p class="introduce">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
               magna aliquam erat volutpat.</p>
           </div>
           <div class="content_row__column ml-20">
             <img src="./assets/images/why-it-matter.png" />
-            <h2>Why it matter</h2>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+            <h2 class="introduce">Why it matter</h2>
+            <p class="introduce">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
               magna aliquam erat volutpat.</p>
           </div>
         </div>
@@ -110,7 +108,7 @@
         </div>
         <div class="content-row mt-40">
           <div class="content-row__column mr-20">
-            <p>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam noummy nibh euismod tincidunt ut loreet dolore magna aliquam erat volutpat. Ut wisi enim adminim veniam, quis nostrud "</p>
+            <p class="feedback">"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam noummy nibh euismod tincidunt ut loreet dolore magna aliquam erat volutpat. Ut wisi enim adminim veniam, quis nostrud "</p>
             <div class="person-panel mt-40">
               <div class="person-panel__photo">
                 <img src="assets/images/man1.png" />
@@ -122,7 +120,7 @@
             </div>
           </div>
           <div class="content-row__column ml-20 mr-20">
-            <p>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam noummy nibh euismod tincidunt ut loreet dolore
+            <p class="feedback">"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam noummy nibh euismod tincidunt ut loreet dolore
             magna aliquam erat volutpat. Ut wisi enim adminim veniam, quis nostrud "</p>
             <div class="person-panel  mt-40">
               <div class="person-panel__photo">
@@ -135,7 +133,7 @@
             </div>
           </div>
           <div class="content-row__column ml-20 mr-20">
-            <p>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam noummy nibh euismod tincidunt ut loreet dolore
+            <p class="feedback">"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam noummy nibh euismod tincidunt ut loreet dolore
             magna aliquam erat volutpat. Ut wisi enim adminim veniam, quis nostrud "</p>
             <div class="person-panel  mt-40">
               <div class="person-panel__photo">
@@ -150,9 +148,9 @@
         </div>
       </div>
     </div>
-    <!-- Third Paragraph Start (You're in good company) End -->
+    <!-- Second Paragraph Start (You're in good company) End -->
 
-    <!-- Second Paragraph Start (Why Pulse) Start -->
+    <!-- Third Paragraph Start (Why Pulse) Start -->
     <div class="content__block mt-xlarge">
       <h1>__</h1>
       <h1>Why Pulse</h1>
@@ -212,24 +210,73 @@
   <!-- Footer End -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script type="text/javascript" src="./assets/js/swiper.min.js"></script>
   <script type="text/javascript">
+    
+    slideIndex = 0;
+    
+    function animateCSS(element, animationName, callback) {
+      const node = document.querySelector(element);
+      node.classList.add('animated', animationName);
+
+      function handleAnimationEnd() {
+        node.classList.remove('animated', 'animationName');
+        node.removeEventListener('animationend', handleAnimationEnd);
+
+        if (typeof callback === 'function') callback()
+      }
+
+      node.addEventListener('animationend', handleAnimationEnd)
+    }
+
+    function incSlideIndex() {
+      slideIndex++;
+    }
+
+    function hideImage() {
+      $('.slide').addClass('hide');
+      $('.slide h1').addClass('hide');
+    }
+
+    function imageAnimation(delay) {
+      setTimeout(function () {
+
+        prevSlideNum = ((slideIndex + 1) % 2) + 1;
+        $('.slider-' + prevSlideNum).addClass('hide');
+        $('.slider-' + prevSlideNum + ' h1').addClass('hide');
+
+        slideNum = (slideIndex % 2) + 1;
+        $('.slider-' + slideNum).removeClass('hide');
+        animateCSS('.slider-' + slideNum, 'bounceInRight', '');
+      }, delay);
+
+      setTimeout(function () {
+        slideNum = (slideIndex % 2) + 1;
+        $('.slider-' + slideNum + ' h1').removeClass('hide');
+        animateCSS('.slider-' + slideNum + ' h1', 'zoomInLeft', function() {
+          incSlideIndex();
+          imageAnimation(2000);
+        });
+      }, delay + 700);
+    }
     $(document).ready(function() {
-      var swiper = new Swiper('#slider', {
-        effect: 'fade',
-        spaceBetween: 0,
-        centeredSlides: true,
-        loop: true,
-        autoplay: {
-          delay: 4500,
-          disableOnInteraction: false,
-        }
-      });
       $(".toggle-bar").on('click', function() {
         $('.navbar').toggle();
       });
+
+      imageAnimation(700);
+
+      setTimeout(function () {
+        $('.header-introduction').removeClass('hide');
+        animateCSS('.header-introduction', 'bounceInUp', '');
+      }, 2100);
+
+      setTimeout(function () {
+        $('.header-point').removeClass('hide');
+        animateCSS('.header-point', 'fadeIn', '');
+      }, 2100);
+
     });
     
   </script>
 </body>
-</html>
+</html>`
