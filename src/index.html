@@ -6,6 +6,9 @@
   <title>Pulse</title>
   <link href="assets/font-awesome/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+  <link rel="stylesheet" href="assets/styles/font.css" />
+
   <link rel="stylesheet" href="assets/styles/common.css" />
   <link rel="stylesheet" href="assets/styles/main.css" />
 </head>
@@ -33,10 +36,10 @@
       <div class="header__slider__wrapper">
         <div class="header__slider__wrapper__section">
           <div class="header__slider__wrapper__section__main slide slider-1 hide">
-            <h1 class="hide">Collective Insight</h1>
+            <h1 class="header__slider__wrapper__section__main--caption hide">Collective Insight</h1>
           </div>
           <div class="header__slider__wrapper__section__main slide slider-2 hide">
-            <h1 class="hide">Project Foresight</h1>
+            <h1 class="header__slider__wrapper__section__main--caption hide">Project Foresight</h1>
           </div>
           <div class="header__slider__wrapper__section__description">
             <p class="header-introduction hide">
@@ -53,9 +56,9 @@
 
   <div class="content">
     <!-- First Paragraph Start (So much more than a survey) Start -->
-    <div class="content__block bg-light-grey">
-      <h1>__</h1>
-      <h1>So much more than a survey</h1>
+    <div class="content__block bg-light-grey paragraph-heading-1">
+      <span class="separator">&nbsp;</span>
+      <h2 class="heading-text">So much more than a survey</h2>
     </div>
     <div class="content__block bg-light-grey">
       <div class="content__block--mobile-image pl-md">
@@ -95,9 +98,9 @@
     <!-- First Paragraph Start (So much more than a survey) End -->
 
     <!-- Second Paragraph Start (You're in good company) Start -->
-    <div class="content__block">
-      <h1>__</h1>
-      <h1>You're in good company</h1>
+    <div class="content__block bg-light-grey paragraph-heading-2">
+      <span class="separator">&nbsp;</span>
+      <h2 class="heading-text">You're in  good company</h2>
     </div>
     <div class="content__block">
       <div class="content__block--section">
@@ -151,9 +154,9 @@
     <!-- Second Paragraph Start (You're in good company) End -->
 
     <!-- Third Paragraph Start (Why Pulse) Start -->
-    <div class="content__block mt-xlarge">
-      <h1>__</h1>
-      <h1>Why Pulse</h1>
+    <div class="content__block paragraph-heading-3">
+      <span class="separator">&nbsp;</span>
+      <h2 class="heading-text">Why Pulse</h2>
     </div>
     <div class="content__block">
       <div class="content__block--section">
@@ -254,7 +257,7 @@
         $('.slider-' + slideNum + ' h1').removeClass('hide');
         animateCSS('.slider-' + slideNum + ' h1', 'zoomInLeft', function() {
           incSlideIndex();
-          imageAnimation(2000);
+          // imageAnimation(2000);
         });
       }, delay + 700);
     }

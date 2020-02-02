@@ -30,6 +30,7 @@ a {
   font-size: 17px;
   font-weight: 500;
   height: 40px;
+  font-family: "HelveticaNeueLTStdMd";
 }
 .navbar__item.divider {
   border-left: 1px solid #faf9f9;

@@ -46,17 +46,22 @@
           
           background-repeat: no-repeat;
 
-          h1 {
-            font-size: 6rem;
+          &--caption {
+            font-size: 5.9rem;
+            font-family: "GTHaptikBold" !important;
+            font-style:normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
           }
 
-          &.slider-1{
+          &.slider-1 {
             background-position: center;
             background-size: 39%;
             background-image: url('../images/collective_insight.png');
           }
 
-          &.slider-2{
+          &.slider-2 {
             background-position: center 25%;
             background-size: 25%;
             background-image: url('../images/project_foresight.png');
@@ -106,13 +111,6 @@
       p {
         font-size: 1.2rem;
       }
-    }
-
-    h1 {
-      width: 100%;
-      text-align: center;
-      color: #05004c;
-      font-size: 3rem;
     }
   }
 }
@@ -168,7 +166,7 @@
   padding-bottom: 80px;
   display: flex;
   flex-direction: column;
-  margin-top: 80px;
+  margin-top: 132px;
   color: #fff;
 
   &__link {
@@ -229,10 +227,87 @@
 
 p {
   &.feedback {
-    font-family: Gotham;
+    font-family: "GothamBook";
+    font-style: italic;
   }
-  &.introduce {
-    font-family: Poppins;
+}
+
+.separator {
+  margin-left: calc(50% - 25px);
+  display: block;
+  width: 50px;
+  border-bottom: 5px solid #05004d;
+}
+
+.paragraph-heading-1 {
+  flex-flow: column;
+  text-align: center;
+
+  .separator {
+    margin-top: 86px;
+    margin-bottom: 66px;
+    height: 1px;
+  }
+
+  .heading-text {
+    width: 100%;
+    text-align: center;
+    color: #05004c;
+    margin-top: 0px;
+    margin-bottom: 85px;
+    line-height: 1.35;
+    font-size: 48px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+  }
+}
+
+.paragraph-heading-2 {
+  flex-flow: column;
+  text-align: center;
+
+  .separator {
+    margin-top: 127px;
+    margin-bottom: 66px;
+    height: 1px;
+  }
+
+  .heading-text {
+    width: 100%;
+    text-align: center;
+    color: #05004c;
+    margin-top: 0px;
+    margin-bottom: 48px;
+    line-height: 1.35;
+    font-size: 48px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+  }
+}
+
+.paragraph-heading-3 {
+  flex-flow: column;
+  text-align: center;
+
+  .separator {
+    margin-top: 219px;
+    margin-bottom: 40px;
+    height: 1px;
+  }
+
+  .heading-text {
+    width: 100%;
+    text-align: center;
+    color: #05004c;
+    margin-top: 0px;
+    margin-bottom: 107px;
+    line-height: 1.35;
+    font-size: 48px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
   }
 }
 
@@ -254,7 +329,9 @@ p {
 
     h1 {
       font-size: 3rem;
+      text-align: center;
     }
+
     p {
       margin-left: 20px;
       margin-right: 20px;
