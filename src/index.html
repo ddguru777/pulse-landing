@@ -17,7 +17,7 @@
   <div class="header">
     <div class="header__topbar">
       <div class="header__topbar--logo">
-        <a href="index.html"><img class="logo" src="./assets/images/logo.png"/></a>
+        <a href="index.html"><img class="logo hide" src="./assets/images/logo.png"/></a>
       </div>
       <div class="header__topbar--menu">
         <ul class="navbar-mobile">
@@ -32,21 +32,27 @@
         </ul>
       </div>
     </div>
-    <div class="header__slider swiper-container" id="slider">
+    <div class="header__slider swiper-container">
       <div class="header__slider__wrapper">
         <div class="header__slider__wrapper__section">
-          <div class="header__slider__wrapper__section__main slide slider-1 hide">
-            <h1 class="header__slider__wrapper__section__main--caption hide">Collective Insight</h1>
+          <div id="slide_container" class="header__slider__wrapper__section__main slide-wrapper">
+            <!-- <img class="header__slider__wrapper__section__main--img" 
+              src="assets/images/collective_insight.png" alt="collective-insights" /> -->
+            <!-- <div class="header__slider__wrapper__section__main--img" id="slide_container"></div> -->
+            <h1 class="header__slider__wrapper__section__main--caption slide-1 hide">Collective Insight</h1>
+            <h1 class="header__slider__wrapper__section__main--caption slide-2 hide">Project Foresight</h1>
           </div>
-          <div class="header__slider__wrapper__section__main slide slider-2 hide">
-            <h1 class="header__slider__wrapper__section__main--caption hide">Project Foresight</h1>
-          </div>
-          <div class="header__slider__wrapper__section__description">
-            <p class="header-introduction hide">
+          <!-- <div class="header__slider__wrapper__section__main slide slider-2">
+            <img class="header__slider__wrapper__section__main--img" src="assets/images/project_foresight.png"
+              alt="project_foresight" />
+            <h1 class="header__slider__wrapper__section__main--caption">Project Foresight</h1>
+          </div> -->
+          <div id="slide_description" class="header__slider__wrapper__section__description">
+            <p class="header-introduction">
               Pulse by ProjectAI helps project manager make sense of people's collective insights for <strong>better project
                 outcomes</strong>.
             </p>
-            <a href="#" class="btn green lg mt-20 hide header-point">Try it Out</a>
+            <a href="#" class="btn green lg mt-20 header-point">Try it Out</a>
           </div>
         </div>
       </div>
@@ -98,7 +104,7 @@
     <!-- First Paragraph Start (So much more than a survey) End -->
 
     <!-- Second Paragraph Start (You're in good company) Start -->
-    <div class="content__block bg-light-grey paragraph-heading-2">
+    <div class="content__block paragraph-heading-2">
       <span class="separator">&nbsp;</span>
       <h2 class="heading-text">You're in  good company</h2>
     </div>
@@ -213,73 +219,11 @@
   <!-- Footer End -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script type="text/javascript">
-    
-    slideIndex = 0;
-    
-    function animateCSS(element, animationName, callback) {
-      const node = document.querySelector(element);
-      node.classList.add('animated', animationName);
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js" type="text/javascript"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/bas.js" type="text/javascript"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/OrbitControls-2.js" type="text/javascript"></script>
 
-      function handleAnimationEnd() {
-        node.classList.remove('animated', 'animationName');
-        node.removeEventListener('animationend', handleAnimationEnd);
-
-        if (typeof callback === 'function') callback()
-      }
-
-      node.addEventListener('animationend', handleAnimationEnd)
-    }
-
-    function incSlideIndex() {
-      slideIndex++;
-    }
-
-    function hideImage() {
-      $('.slide').addClass('hide');
-      $('.slide h1').addClass('hide');
-    }
-
-    function imageAnimation(delay) {
-      setTimeout(function () {
-
-        prevSlideNum = ((slideIndex + 1) % 2) + 1;
-        $('.slider-' + prevSlideNum).addClass('hide');
-        $('.slider-' + prevSlideNum + ' h1').addClass('hide');
-
-        slideNum = (slideIndex % 2) + 1;
-        $('.slider-' + slideNum).removeClass('hide');
-        animateCSS('.slider-' + slideNum, 'bounceInRight', '');
-      }, delay);
-
-      setTimeout(function () {
-        slideNum = (slideIndex % 2) + 1;
-        $('.slider-' + slideNum + ' h1').removeClass('hide');
-        animateCSS('.slider-' + slideNum + ' h1', 'zoomInLeft', function() {
-          incSlideIndex();
-          // imageAnimation(2000);
-        });
-      }, delay + 700);
-    }
-    $(document).ready(function() {
-      $(".toggle-bar").on('click', function() {
-        $('.navbar').toggle();
-      });
-
-      imageAnimation(700);
-
-      setTimeout(function () {
-        $('.header-introduction').removeClass('hide');
-        animateCSS('.header-introduction', 'bounceInUp', '');
-      }, 2100);
-
-      setTimeout(function () {
-        $('.header-point').removeClass('hide');
-        animateCSS('.header-point', 'fadeIn', '');
-      }, 2100);
-
-    });
-    
-  </script>
+  <script src="assets/js/main.js" type="text/javascript"></script>
 </body>
-</html>`
+</html>

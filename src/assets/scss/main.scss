@@ -46,28 +46,26 @@
           
           background-repeat: no-repeat;
 
+          &--img {
+            width: 39%;
+          }
+          
           &--caption {
-            font-size: 5.9rem;
+            font-size: 5.3rem;
             font-family: "GTHaptikBold" !important;
             font-style:normal;
             -webkit-font-smoothing: antialiased;
             -webkit-text-stroke-width: 0.2px;
             -moz-osx-font-smoothing: grayscale;
-          }
 
-          &.slider-1 {
-            background-position: center;
-            background-size: 39%;
-            background-image: url('../images/collective_insight.png');
-          }
+            position: absolute; 
+            width: 100%;
+            text-align: center;
+            margin: 0px;
 
-          &.slider-2 {
-            background-position: center 25%;
-            background-size: 25%;
-            background-image: url('../images/project_foresight.png');
-
-            h1 {
-              margin-top: 20%;
+            &.slide-2 {
+              margin-top: 10%;
+              // margin-bottom: 20%;
             }
           }
         }
@@ -212,6 +210,7 @@
       font-weight: 600;
       flex: 1 1 auto;
     }
+
     &--social {     
       a {
         display: inline-block;
@@ -325,7 +324,7 @@ p {
   }
 
   .header {
-    height: 80vh;
+    height: 100vh;
 
     h1 {
       font-size: 3rem;
