@@ -1,7 +1,7 @@
 slideIndex = 0;
 
 function animateCSS(element, animationName, callback) {
-  console.log(animationName);
+
   const node = document.querySelector(element);
   node.classList.add("animated", animationName, "slower");
 
@@ -47,17 +47,17 @@ $(document).ready(function() {
     animateCSS('.logo', 'zoomIn', '');
   }, 800);
 
-  setTimeout(function() {
-    $('.slide-1').removeClass('hide');
-    animateCSS('.slide-1', 'fadeIn', function() {
-      incSlideIndex();
-      imageAnimation(1000)
-    });
-  }, 1200);
+  // setTimeout(function() {
+  //   $('.slide-1').removeClass('hide');
+  //   animateCSS('.slide-1', 'fadeIn', function() {
+  //     incSlideIndex();
+  //     imageAnimation(1000)
+  //   });
+  // }, 1200);
 
   setTimeout(function() {
     init();
-  }, 1800)
+  }, 1200)
 });
 
 console.ward = function() {}; // what warnings?
@@ -69,7 +69,7 @@ function init() {
     fov: 80
   });
 
-  root.renderer.setClearColor(0x000000, 0);
+  // root.renderer.setClearColor(0x000000, 0);
   root.renderer.setPixelRatio(window.devicePixelRatio || 1);
   root.camera.position.set(0, 0, 60);
 
@@ -403,7 +403,7 @@ THREERoot.prototype = {
 
     var cWidth = window.innerWidth;
     var cHeight = window.innerHeight - $("#slide_description").height() - headerTopBarHeight - slideDescriptionDivMarginBotton;
-    this.camera.aspect = cWidth / cHeight;
+    this.camera.aspect = cWidth / cHeight - 0.3;
     this.camera.updateProjectionMatrix();
 
     this.renderer.setSize(cWidth, cHeight);
