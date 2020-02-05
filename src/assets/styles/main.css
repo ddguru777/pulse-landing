@@ -273,10 +273,17 @@ p.feedback {
 @media only screen and (max-width: 768px) {
   .navbar-mobile {
     display: inline-block;
-    width: 60px;
+    width: 50px;
+    list-style-type: none;
   }
   .navbar-mobile i {
     color: #fff;
+  }
+  .navbar-mobile__item {
+    width: 45px;
+  }
+  .navbar-mobile__item a {
+    color: #05004c;
   }
 
   .header {

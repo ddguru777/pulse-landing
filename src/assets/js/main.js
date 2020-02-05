@@ -415,7 +415,15 @@ THREERoot.prototype = {
 
     var cWidth = window.innerWidth;
     var cHeight = window.innerHeight - $("#slide_description").height() - headerTopBarHeight - slideDescriptionDivMarginBotton;
-    this.camera.aspect = cWidth / cHeight - 0.3;
+    var aspectOffset = 0.3
+
+    if (cWidth <= 320) {
+      aspectOffset = 0;
+    } else if (cWidth <= 375) {
+      aspectOffset = 0.2
+    }
+
+    this.camera.aspect = cWidth / cHeight - aspectOffset;
     this.camera.updateProjectionMatrix();
 
     this.renderer.setSize(cWidth, cHeight);

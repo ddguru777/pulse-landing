@@ -317,10 +317,20 @@ p {
 @media only screen and (max-width: 768px) {
   .navbar-mobile {
     display: inline-block;
-    width: 60px;
+    width: 50px;
+    list-style-type: none;
+    
     i {
       color: #fff;
     }
+
+     &__item {
+        width: 45px;
+
+        a {
+          color: #05004c;
+        }
+      }
   }
 
   .header {
