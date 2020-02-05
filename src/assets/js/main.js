@@ -23,6 +23,7 @@ function startSlide() {
 
 $(document).ready(function() {
 
+  $('#slide_container').hide();
   // Toggle 'open-state' class
   // document.body.classList.toggle('open-state');
   $('body').addClass('open-state');
@@ -67,12 +68,20 @@ function init() {
     slideIndex++;
 
     if (slideIndex === 2) {
-      var tl = new TimelineMax({ repeat: -1, repeatDelay: 2.0, yoyo: true });
+      setTimeout(function() {
+        $('#slide_container').fadeIn(1000, function() {
+          var tl = new TimelineMax({
+            repeat: -1,
+            repeatDelay: 2.0,
+            yoyo: true
+          });
 
-      tl.add(slide.transition(), 0);
-      tl.add(slide2.transition(), 0);
+          tl.add(slide.transition(), 0);
+          tl.add(slide2.transition(), 0);
 
-      createTweenScrubber(tl);
+          createTweenScrubber(tl);
+        })
+      }, 500);
     }
   });
   root.scene.add(slide);
@@ -83,13 +92,22 @@ function init() {
   l2.load("assets/images/project_foresight.png", function(img) {
     slide2.setImage(img);
     slideIndex++;
+    
     if (slideIndex === 2) {
-      var tl = new TimelineMax({ repeat: -1, repeatDelay: 2.0, yoyo: true });
+      setTimeout(function() {
+        $('#slide_container').fadeIn(1000, function() {
+          var tl = new TimelineMax({
+            repeat: -1,
+            repeatDelay: 2.0,
+            yoyo: true
+          });
 
-      tl.add(slide.transition(), 0);
-      tl.add(slide2.transition(), 0);
+          tl.add(slide.transition(), 0);
+          tl.add(slide2.transition(), 0);
 
-      createTweenScrubber(tl);
+          createTweenScrubber(tl);
+        })
+      }, 500);
     }
   });
 
