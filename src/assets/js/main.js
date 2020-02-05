@@ -1,4 +1,4 @@
-slideIndex = 0;
+imageLoadedCnt = 0;
 
 function animateCSS(element, animationName, callback) {
 
@@ -15,33 +15,36 @@ function animateCSS(element, animationName, callback) {
   node.addEventListener("animationend", handleAnimationEnd);
 }
 
-function startSlide() {
-  setTimeout(function() {
-    init();
-  }, 2500)
-}
-
 $(document).ready(function() {
 
-  $('#slide_container').hide();
-  // Toggle 'open-state' class
-  // document.body.classList.toggle('open-state');
-  $('body').addClass('open-state');
-  
+  // menubar hambuger in mobile layout
   $(".toggle-bar").on("click", function() {
     $(".navbar").toggle();
   });
 
-  setTimeout(function() {
-    $('.logo').removeClass('hide');
-    animateCSS('.logo', 'zoomIn', '');
-  }, 1500);
+  $("#slide_container").hide();   // Hide slide div until slide images loaded
 
-  setTimeout(function() {
-    $(".svg-center").hide();
-  }, 1000);
+  // hide center logo
+  $("#logo_animation").addClass("fixed");
+  $("#logo_animation").hide();
+  $("#logo_animation").fadeIn(2000, function() {
+    setTimeout(function() {
+      animateCSS('#logo_animation', 'zoomOut', function() {
+        $('#logo_animation').addClass('hide');
+      });
+    }, 500);
 
-  startSlide();
+    // Splash translation - 2s
+    $('body').addClass('open-state');
+    setTimeout(function() {
+      $(".svg-center").hide();    // hide center circle after 1s
+    }, 1000);
+    
+    // Load slide image (all animations must be started after image loaded)
+    setTimeout(function() {
+      init();
+    }, 2000);
+  });
 });
 
 console.ward = function() {}; // what warnings?
@@ -63,57 +66,51 @@ function init() {
   var slide = new Slide(width, height, "out");
   var l1 = new THREE.ImageLoader();
   l1.setCrossOrigin("Anonymous");
-  l1.load("assets/images/collective_insight.png", function(img) {
-    slide.setImage(img);
-    slideIndex++;
-
-    if (slideIndex === 2) {
-      setTimeout(function() {
-        $('#slide_container').fadeIn(1000, function() {
-          var tl = new TimelineMax({
-            repeat: -1,
-            repeatDelay: 2.0,
-            yoyo: true
-          });
-
-          tl.add(slide.transition(), 0);
-          tl.add(slide2.transition(), 0);
-
-          createTweenScrubber(tl);
-        })
-      }, 500);
+  l1.load(
+    "assets/images/collective_insight.png",
+    function(img) {
+      slide.setImage(img);
+      imageLoadedCnt++;
     }
-  });
+  );
   root.scene.add(slide);
-
+ 
   var slide2 = new Slide(width, height, "in");
   var l2 = new THREE.ImageLoader();
   l2.setCrossOrigin("Anonymous");
-  l2.load("assets/images/project_foresight.png", function(img) {
-    slide2.setImage(img);
-    slideIndex++;
-    
-    if (slideIndex === 2) {
-      setTimeout(function() {
-        $('#slide_container').fadeIn(1000, function() {
-          var tl = new TimelineMax({
-            repeat: -1,
-            repeatDelay: 2.0,
-            yoyo: true
-          });
-
-          tl.add(slide.transition(), 0);
-          tl.add(slide2.transition(), 0);
-
-          createTweenScrubber(tl);
-        })
-      }, 500);
+  l2.load(
+    "assets/images/project_foresight.png",
+    function(img) {
+      slide2.setImage(img);
+      imageLoadedCnt++;
     }
-  });
-
+  );
   root.scene.add(slide2);
 
-  
+  var slideInterval = setInterval(function() {
+    if (imageLoadedCnt === 2) {
+      clearInterval(slideInterval);
+    }
+
+    // Show Topbar Logo
+    $(".logo").removeClass("hide");
+    animateCSS(".logo", "fadeIn", "");
+
+    $("#slide_container").fadeIn(1300, function() {
+      setTimeout(function() {
+        var tl = new TimelineMax({
+          repeat: -1,
+          repeatDelay: 1.0,
+          yoyo: true
+        });
+
+        tl.add(slide2.transition(), 0);
+        tl.add(slide.transition(), 0);
+
+        createTweenScrubber(tl);
+      }, 700);
+    });
+  }, 100);
 
   window.addEventListener("keyup", function(e) {
     if (e.keyCode === 80) {

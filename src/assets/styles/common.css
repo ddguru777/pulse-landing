@@ -2,7 +2,6 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
-  font-family: Poppins;
 }
 
 a {
@@ -30,7 +29,6 @@ a {
   font-size: 17px;
   font-weight: 500;
   height: 40px;
-  font-family: "HelveticaNeueLTStdMd";
 }
 .navbar__item.divider {
   border-left: 1px solid #faf9f9;
@@ -69,6 +67,11 @@ a {
   padding-top: 12px;
   padding-bottom: 18px;
   border-radius: 35px;
+}
+
+.fixed {
+  z-index: 9999 !important;
+  position: absolute !important;
 }
 
 .toggle-bar:hover {
@@ -116,7 +119,7 @@ a {
 }
 
 .hide {
-  display: none !important;
+  display: none;
 }
 
 /*# sourceMappingURL=common.css.map */

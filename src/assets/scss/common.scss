@@ -77,6 +77,11 @@ a {
   }
 }
 
+.fixed {
+  z-index: 9999 !important;
+  position: absolute !important;
+}
+
 .toggle-bar {
   &:hover {
     color: #5dc2b1;
