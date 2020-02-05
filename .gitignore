@@ -6,3 +6,6 @@ vendor/
 yarn.lock
 package-lock.json
 composer.lock
+
+#log
+yarn-error.log
