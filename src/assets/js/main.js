@@ -32,6 +32,7 @@ $(document).ready(function() {
  
   $('.svg-logo .st0').hide();
   $('.svg-logo .st1').hide();
+  $('.svg-logo').removeClass('hide');
 
   setTimeout(function() {
     for (i = 1; i <= 21; i++) {
