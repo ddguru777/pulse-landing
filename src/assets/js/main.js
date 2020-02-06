@@ -33,12 +33,11 @@ $(document).ready(function() {
   $('.svg-logo .st0').hide();
   $('.svg-logo .st1').hide();
   $('.svg-logo').removeClass('hide');
-
   setTimeout(function() {
     for (i = 1; i <= 21; i++) {
       const index = i;
       setTimeout(function() {
-        $(".svg-elem-" + index).fadeIn(80 * index);
+        $(".svg-elem-" + index).fadeIn(120 * index);
       }, index * 100);
      
     }
@@ -66,7 +65,7 @@ $(document).ready(function() {
     setTimeout(function() {
       init();
     }, 2000);
-  }, 6000);
+  }, 5800);
 });
 
 console.ward = function() {}; // what warnings?
