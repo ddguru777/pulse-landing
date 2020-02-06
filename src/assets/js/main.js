@@ -17,6 +17,10 @@ function animateCSS(element, animationName, callback) {
 
 $(document).ready(function() {
 
+  setTimeout(function() {
+    $(this).scrollTop(0);
+  }, 500);
+
   // menubar hambuger in mobile layout
   $(".toggle-bar").on("click", function() {
     $(".navbar").toggle();
@@ -25,26 +29,44 @@ $(document).ready(function() {
   $("#slide_container").hide();   // Hide slide div until slide images loaded
 
   // hide center logo
-  $("#logo_animation").addClass("fixed");
-  $("#logo_animation").hide();
-  $("#logo_animation").fadeIn(2000, function() {
-    setTimeout(function() {
-      animateCSS('#logo_animation', 'zoomOut', function() {
-        $('#logo_animation').addClass('hide');
-      });
-    }, 500);
+ 
+  $('.svg-logo .st0').hide();
+  $('.svg-logo .st1').hide();
 
-    // Splash translation - 2s
-    $('body').addClass('open-state');
-    setTimeout(function() {
-      $(".svg-center").hide();    // hide center circle after 1s
-    }, 1000);
+  setTimeout(function() {
+    for (i = 1; i <= 21; i++) {
+      const index = i;
+      console.log(index);
+      setTimeout(function() {
+        $(".svg-elem-" + index).fadeIn(80 * index);
+      }, index * 100);
+     
+    }
+  }, 500);
+
+  setTimeout(function() {
+    for (i = 21; i >= 1; i--) {
+      const index = i;
+      setTimeout(function() {
+        $(".svg-elem-" + index).fadeOut(80 * index);
+      }, index * 100);
+    }
     
+  }, 4200);
+
+  // Splash translation - 2s
+  setTimeout(function() {
+    $("body").addClass("open-state");
+    
+    setTimeout(function() {
+      $(".svg-center").hide(); // hide center circle after 1s
+    }, 6500);
+
     // Load slide image (all animations must be started after image loaded)
     setTimeout(function() {
       init();
-    }, 2000);
-  });
+    }, 6500);
+  }, 5500);
 });
 
 console.ward = function() {}; // what warnings?
@@ -87,14 +109,18 @@ function init() {
   );
   root.scene.add(slide2);
 
-  var slideInterval = setInterval(function() {
-    if (imageLoadedCnt === 2) {
-      clearInterval(slideInterval);
-    }
-
+  setTimeout(function() {
     // Show Topbar Logo
     $(".logo").removeClass("hide");
     animateCSS(".logo", "fadeIn", "");
+  }, 100);
+
+  var slideInterval = setInterval(function() {
+    if (imageLoadedCnt === 2) {
+      clearInterval(slideInterval);
+    } else {
+      return;
+    }
 
     $("#slide_container").fadeIn(1300, function() {
       setTimeout(function() {

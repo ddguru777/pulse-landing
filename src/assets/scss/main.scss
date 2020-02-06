@@ -482,7 +482,7 @@ p {
 
 /* SVG */
 
-svg {
+.svg-borders {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -491,18 +491,25 @@ svg {
 
 .svg-center {
   border-radius: 100%;
+
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-path {
+.path-center {
   fill: none;
   stroke: black;
   stroke-width: 150px;
-
-  &.path-center {
-    stroke-width: 200px;
-  }
+  stroke-width: 200px;
 }
 
+.path-borders {
+  fill: none;
+  stroke: black;
+  stroke-width: 150px;
+}
 
 /* Transitions */
 
@@ -574,4 +581,20 @@ $maxLen: 10000;
 
   // Next iteration
   $circlesNumber: $circlesNumber - 1;
+}
+
+/* Pulse Logo drawing */
+.st0 {
+  fill: #FFFFFF;
+}
+  
+.st1 {
+  fill: #7CCCBF;
+}
+
+.svg-logo {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

@@ -408,7 +408,7 @@ p.feedback {
   }
 }
 /* SVG */
-svg {
+.svg-borders {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -417,15 +417,23 @@ svg {
 
 .svg-center {
   border-radius: 100%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-path {
+.path-center {
   fill: none;
   stroke: black;
   stroke-width: 150px;
-}
-path.path-center {
   stroke-width: 200px;
+}
+
+.path-borders {
+  fill: none;
+  stroke: black;
+  stroke-width: 150px;
 }
 
 /* Transitions */
@@ -501,6 +509,22 @@ path.path-center {
 
 .open-state .path-borders:nth-child(1) {
   stroke-dasharray: 10000 1102.5 1102.5;
+}
+
+/* Pulse Logo drawing */
+.st0 {
+  fill: #FFFFFF;
+}
+
+.st1 {
+  fill: #7CCCBF;
+}
+
+.svg-logo {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*# sourceMappingURL=main.css.map */
