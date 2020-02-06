@@ -19,7 +19,7 @@ $(document).ready(function() {
 
   setTimeout(function() {
     $(this).scrollTop(0);
-  }, 500);
+  }, 2000);
 
   // menubar hambuger in mobile layout
   $(".toggle-bar").on("click", function() {
@@ -60,13 +60,13 @@ $(document).ready(function() {
     
     setTimeout(function() {
       $(".svg-center").hide(); // hide center circle after 1s
-    }, 6500);
+    }, 2000);
 
     // Load slide image (all animations must be started after image loaded)
     setTimeout(function() {
       init();
-    }, 6500);
-  }, 5500);
+    }, 2000);
+  }, 6000);
 });
 
 console.ward = function() {}; // what warnings?
