@@ -37,7 +37,6 @@ $(document).ready(function() {
   setTimeout(function() {
     for (i = 1; i <= 21; i++) {
       const index = i;
-      console.log(index);
       setTimeout(function() {
         $(".svg-elem-" + index).fadeIn(80 * index);
       }, index * 100);
