@@ -16,13 +16,10 @@ a {
 }
 
 .logo {
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-content: center;
+  width: 100%;
   margin-top: 37px;
   margin-bottom: 33px;
-  margin-left: auto;
+  text-align: center;
 }
 
 .container {
@@ -34,11 +31,13 @@ a {
 .container__header {
   width: 100%;
   background-color: #131a36;
-  background-image: url("../images/collective_insight.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 60%;
   height: 427px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.container__header--bg {
+  width: 60%;
 }
 .container__body {
   width: calc(100% - 86px);
